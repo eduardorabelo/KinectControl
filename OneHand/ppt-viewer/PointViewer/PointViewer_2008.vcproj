@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="PointViewer"
+	Name="PPTViewer"
 	ProjectGUID="{00000000-0000-0000-0000-000000000004}"
 	RootNamespace="PointViewer"
 	TargetFrameworkVersion="0"
@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(OPEN_NI_INCLUDE)&quot;;..\Include"
+				AdditionalIncludeDirectories="&quot;$(OPEN_NI_INCLUDE)&quot;;..\..\common\Include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;USE_GLUT"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -62,9 +62,9 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="OpenNI.lib XnVNite.lib"
-				OutputFile="../Bin/Debug/Sample-PointViewer.exe"
+				OutputFile="../../common/Bin/Debug/$(ProjectName).exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;$(OPEN_NI_LIB)&quot;;..\Lib"
+				AdditionalLibraryDirectories="&quot;$(OPEN_NI_LIB)&quot;;..\..\common\Lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="../Bin/Debug/Sample-PointViewer.pdb"
@@ -208,15 +208,15 @@
 			Name="Res"
 			>
 			<File
-				RelativePath="..\Res\mainicon.ico"
+				RelativePath="..\..\common\Res\mainicon.ico"
 				>
 			</File>
 			<File
-				RelativePath="..\Res\NITE.rc"
+				RelativePath="..\..\common\Res\NITE.rc"
 				>
 			</File>
 			<File
-				RelativePath="..\Res\Resource-NITE.h"
+				RelativePath="..\..\common\Res\Resource-NITE.h"
 				>
 			</File>
 		</Filter>

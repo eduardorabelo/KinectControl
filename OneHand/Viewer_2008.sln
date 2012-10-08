@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PointViewer", "PointViewer\PointViewer_2008.vcproj", "{00000000-0000-0000-0000-000000000004}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PPTViewer", "ppt-viewer\PointViewer\PointViewer_2008.vcproj", "{00000000-0000-0000-0000-000000000004}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
