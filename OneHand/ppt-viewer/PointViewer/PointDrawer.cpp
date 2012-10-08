@@ -68,6 +68,7 @@ XnVPointDrawer::XnVPointDrawer(XnUInt32 nHistory, xn::DepthGenerator depthGenera
 	m_bXDis=TRUE;
 	m_bZDis=TRUE;
 	m_bUpToDown=TRUE;
+	m_bRightToLeft=TRUE;
 	m_zOrigin=0;
 
 	m_ptSumRotate=0;
@@ -180,27 +181,6 @@ void XnVPointDrawer::OnPointUpdate(const XnVHandPointContext* cxt)
 	int yDis=point.y-m_ptStart.y;
 	double zDis=ptProjective.Z-m_zOrigin;
 
-	//XnPoint3D ptProjective(cxt->ptPosition);
-	//if (m_bSelect)
-	//{
-	//	m_xcoordinate=ptProjective.X;
-	//	m_ycoordinate=ptProjective.Y;
-	//	m_bSelect=FALSE;
-	//}
-
-	//if (bShouldPrint)printf("Point (%f,%f,%f)", ptProjective.X, ptProjective.Y, ptProjective.Z);
-	//m_DepthGenerator.ConvertRealWorldToProjective(1, &ptProjective, &ptProjective);
-	//if (bShouldPrint)printf(" -> (%f,%f,%f)\n", ptProjective.X, ptProjective.Y, ptProjective.Z);
-
-	//// Add new position to the history buffer
-	//m_History[cxt->nID].push_front(ptProjective);
-	//// Keep size of history buffer
-	//if (m_History[cxt->nID].size() > m_nHistorySize)
-	//	m_History[cxt->nID].pop_back();
-	//bShouldPrint = false;
-
-	//int xDis=ptProjective.X-m_xcoordinate;
-	//int yDis=ptProjective.Y-m_ycoordinate;
 
 	//上、下方向键
 	if (yDis<(-200))
@@ -246,6 +226,50 @@ void XnVPointDrawer::OnPointUpdate(const XnVHandPointContext* cxt)
 		}
 	}
 
+	//左、右方向键
+	if (xDis<(-100))
+	{
+		if (m_bXDis)
+		{
+			keybd_event(VK_RIGHT,0,0,0);
+			keybd_event(VK_RIGHT,0,KEYEVENTF_KEYUP,0);
+			printf("Up success!");
+			m_bRightToLeft=FALSE;
+			m_bXDis=FALSE;
+		} 
+		else
+		{
+		}
+	} 
+	else	
+	{
+		if(xDis>100)
+		{
+			if (m_bXDis)
+			{
+				if (m_bRightToLeft)
+				{
+					keybd_event(VK_LEFT,0,0,0);
+					keybd_event(VK_LEFT,0,KEYEVENTF_KEYUP,0);
+					printf("Down success!");
+					m_bXDis=FALSE;
+				} 
+				else
+				{
+					m_bRightToLeft=TRUE;
+					m_bXDis=FALSE;
+				}
+			} 
+			else
+			{
+			}
+		}
+		else
+		{
+			m_bXDis=TRUE;
+		}
+	}
+#if 0
 	//Esc退出键
 	if (xDis>300)
 	{
@@ -264,7 +288,7 @@ void XnVPointDrawer::OnPointUpdate(const XnVHandPointContext* cxt)
 	{
 		m_bXDis=TRUE;
 	}
-
+#endif
 	//shift+F5功能
 	if (zDis<-100.0)
 	{

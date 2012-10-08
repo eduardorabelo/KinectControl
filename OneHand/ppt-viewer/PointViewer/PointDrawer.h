@@ -105,6 +105,7 @@ public:
 	BOOL m_bXDis;
 	BOOL m_bZDis;
 	BOOL m_bUpToDown;
+	BOOL m_bRightToLeft;
 	double m_zOrigin;
 
 	//Ðý×ª¹¦ÄÜ
