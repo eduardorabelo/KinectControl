@@ -197,7 +197,7 @@ void glInit (int * pargc, char ** argv)
 #endif
 
 // xml to initialize OpenNI/*../../../Data/Sample-Tracking.xml*/
-#define SAMPLE_XML_PATH "C:\\Program Files\\Prime Sense\\NITE\\Data\\Sample-Tracking.xml"
+#define SAMPLE_XML_PATH "Sample-Tracking.xml"
 
 int main(int argc, char ** argv)
 {

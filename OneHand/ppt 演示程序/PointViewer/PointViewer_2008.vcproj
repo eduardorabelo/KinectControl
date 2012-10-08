@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;C:\Program Files\OpenNI\Include&quot;;&quot;$(OPEN_NI_INCLUDE)&quot;;..\..\Include;..\..\Samples\PointViewer"
+				AdditionalIncludeDirectories="&quot;$(OPEN_NI_INCLUDE)&quot;;..\Include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;USE_GLUT"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -64,7 +64,7 @@
 				AdditionalDependencies="OpenNI.lib XnVNite.lib"
 				OutputFile="../Bin/Debug/Sample-PointViewer.exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(OPEN_NI_LIB);..\..\Lib;..\..\..\Lib\$(ConfigurationName);..\..\Samples\PointViewer\Libs;..\..\Lib\$(ConfigurationName)"
+				AdditionalLibraryDirectories="&quot;$(OPEN_NI_LIB)&quot;;..\Lib"
 				GenerateManifest="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="../Bin/Debug/Sample-PointViewer.pdb"
@@ -192,15 +192,15 @@
 			Name="Source Files"
 			>
 			<File
-				RelativePath="..\..\Samples\PointViewer\main.cpp"
+				RelativePath=".\main.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Samples\PointViewer\PointDrawer.cpp"
+				RelativePath=".\PointDrawer.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Samples\PointViewer\PointDrawer.h"
+				RelativePath=".\PointDrawer.h"
 				>
 			</File>
 		</Filter>
